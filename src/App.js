@@ -42,7 +42,7 @@ class App extends Component {
         description: undefined,
         humidity: undefined,
         temperature: undefined,
-        error: 'Please enter the values'
+        error: 'Please enter the values.'
       })
     }
 
@@ -50,17 +50,29 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Titles />
-        <Form getWeather={this.getWeather}/>
-        <Weather 
-        city={this.state.city}
-        country={this.state.country}
-        description={this.state.description}
-        temperature={this.state.temperature}
-        humidity={this.state.humidity}
-        error={this.state.error}
-        />
+      <div>
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-xs-5 title-container">
+                  <Titles />
+                </div>
+                <div className="col-xs-7 form-container">
+                  <Form getWeather={this.getWeather} />
+                  <Weather 
+                  city={this.state.city}
+                  country={this.state.country}
+                  description={this.state.description}
+                  temperature={this.state.temperature}
+                  humidity={this.state.humidity}
+                  error={this.state.error}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
